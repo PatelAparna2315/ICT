@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+h2 {
+  text-align: center;
+  color: #0a4d68;
+  margin-top: 20px;
+}
+.section {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.achievements,
+.placements,
+.gallery {
+  margin-bottom: 20px;
+}
+.achievements ul,
+.placements ul {
+  list-style: none;
+  padding: 0;
+}
+.achievements li,
+.placements li {
+  padding: 8px;
+  background: #eef6f9;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+video {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+.gallery img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  margin: 10px;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+.gallery img:hover {
+  transform: scale(1.1);
+}

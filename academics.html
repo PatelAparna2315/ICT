@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academics</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="academics.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">VNSGU - ICT</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="faculty.html">Faculty</a></li>
+        <li><a href="students.html">Student Corner</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <section class="academics">
+      <div class="container">
+        <h2>Academics</h2>
+        <p class="intro">
+          The Department of ICT offers postgraduate programs designed to equip
+          students with in-depth knowledge and practical skills in the field of
+          Information and Communication Technology.
+        </p>
+
+        <!-- Courses Offered -->
+        <div class="courses">
+          <div class="course">
+            <h3>MSc (ICT) - Semester I & II</h3>
+            <p>
+              Focuses on core computing concepts, programming, databases, and
+              networking.
+            </p>
+            <a href="syllabus/msc-ict-sem1-2.pdf" download>Download Syllabus</a>
+          </div>
+          <div class="course">
+            <h3>MSc (ICT) - Semester III & IV</h3>
+            <p>
+              Advanced topics in AI, cloud computing, big data, and final
+              project work.
+            </p>
+            <a href="syllabus/msc-ict-sem3-4.pdf" download>
+              Download Syllabus</a
+            >
+          </div>
+          <div class="course">
+            <h3>PhD in ICT</h3>
+            <p>
+              Research-focused program in cutting-edge ICT domains under expert
+              guidance.
+            </p>
+            <a href="syllabus/phd-ict.pdf" download>Download Syllabus</a>
+          </div>
+        </div>
+
+        <!-- Academic Structure Diagram -->
+        <h3 style="margin-top: 40px">Academic Structure</h3>
+        <canvas id="academicsChart" width="800" height="400"></canvas>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>VNSGU - Department of ICT</h3>
+          <p>
+            Committed to excellence in education, research, and innovation in
+            the field of Information and Communication Technology.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="students.html">Student Corner</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: <a href="mailto:ict@vnsgu.ac.in">ict@vnsgu.ac.in</a></p>
+          <p>Phone: +91 12345 67890</p>
+          <p>Address: VNSGU Campus, Surat, Gujarat, India</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 VNSGU Department of ICT. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      const canvas = document.getElementById("academicsChart");
+      const ctx = canvas.getContext("2d");
+
+      // Draw title
+      ctx.fillStyle = "#004080";
+      ctx.font = "20px Arial";
+      ctx.fillText("Academic Structure - MSc (ICT)", 250, 30);
+
+      // Nodes
+      const nodes = [
+        { text: "MSc ICT", x: 380, y: 80, color: "#ffcc00" },
+        { text: "Semester 1", x: 180, y: 180, color: "#90ee90" },
+        { text: "Semester 2", x: 580, y: 180, color: "#90ee90" },
+        { text: "Semester 3", x: 180, y: 280, color: "#add8e6" },
+        { text: "Semester 4", x: 580, y: 280, color: "#add8e6" },
+      ];
+
+      function drawNode(node) {
+        ctx.beginPath();
+        ctx.fillStyle = node.color;
+        ctx.strokeStyle = "#333";
+        ctx.roundRect(node.x, node.y, 150, 40, 8);
+        ctx.fill();
+        ctx.stroke();
+        ctx.fillStyle = "#000";
+        ctx.font = "14px Arial";
+        ctx.fillText(node.text, node.x + 25, node.y + 25);
+      }
+
+      // Draw lines between nodes
+      ctx.strokeStyle = "#000";
+      ctx.beginPath();
+      ctx.moveTo(455, 120); // MSc ICT to Sem1
+      ctx.lineTo(255, 180);
+
+      ctx.moveTo(455, 120); // MSc ICT to Sem2
+      ctx.lineTo(655, 180);
+
+      ctx.moveTo(255, 220); // Sem1 to Sem3
+      ctx.lineTo(255, 280);
+
+      ctx.moveTo(655, 220); // Sem2 to Sem4
+      ctx.lineTo(655, 280);
+      ctx.stroke();
+
+      // Draw nodes
+      nodes.forEach(drawNode);
+    </script>
+  </body>
+</html>
